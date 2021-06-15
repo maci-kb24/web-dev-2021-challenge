@@ -1,0 +1,31 @@
+@import '../../node_modules/normalize.css/normalize';
+
+@import 'variables/typography';
+@import 'variables/breakpoints';
+@import 'variables/colors';
+
+@import 'mixins/breakpoints';
+
+@import 'functions/rem';
+
+@import 'global/navigation';
+@import 'global/footer';
+
+@import 'pages/products';
+
+.wrapper {
+  max-width: rem(1280px);
+  padding-left: rem(16px);
+  padding-right: rem(16px);
+  margin: 0 auto;
+
+  @include breakpoint-above-tablet {
+    padding-left: rem(32px);
+    padding-right: rem(32px);
+  }
+
+  @include breakpoint-above-desktop-small {
+    padding-left: rem(80px);
+    padding-right: rem(80px);
+  }
+}

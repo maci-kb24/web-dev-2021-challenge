@@ -1,0 +1,116 @@
+.page-products {
+}
+
+#header {
+  padding-top: rem(100px);
+  padding-bottom: rem(160px);
+  padding-left: rem(16px);
+  padding-right: rem(16px);
+  decoration: none;
+  text-align: center;
+  font-family: $font-family;
+  letter-spacing: -0.05em;
+
+  @include breakpoint-above-tablet {
+    letter-spacing: -0.1em;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include breakpoint-above-desktop-small {
+    padding: rem(100px);
+    padding-bottom: rem(160px);
+  }
+
+  h1 {
+    font-weight: $font-weight-bold;
+    font-size: rem(36px);
+    color: $color-black;
+    margin: 0;
+    line-height: 1;
+    margin-bottom: 0.1em;
+
+    @include breakpoint-above-tablet {
+      font-size: rem(60px);
+    }
+  }
+
+  h2 {
+    font-weight: $font-weight-bold;
+    font-size: rem(24px);
+    color: $color-overlay;
+    margin: 0;
+    line-height: 1;
+
+    @include breakpoint-above-tablet {
+      font-size: rem(36px);
+    }
+  }
+}
+
+.main > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: rem(32px);
+  row-gap: rem(64px);
+
+  @include breakpoint-above-tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include breakpoint-above-desktop-small {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.product {
+  font-family: $font-family;
+
+  img {
+    max-width: 100%;
+    border: 1px $color-border solid;
+    border-radius: rem(8px);
+    box-shadow: 0 2px 16px $color-border;
+    object-position: center;
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    h3 {
+      font-weight: $font-weight-bold;
+      color: $color-black;
+      font-size: rem(18px);
+      letter-spacing: -0.05em;
+      margin-bottom: 0;
+      line-height: 1.1;
+      margin-top: 1.3em;
+      margin-bottom: 0.3em;
+    }
+    p {
+      font-weight: normal;
+      margin: 0;
+      color: $color-black;
+      font-size: rem(14px);
+    }
+
+    .price {
+      font-weight: $font-weight-bold;
+      color: $color-black;
+      font-size: rem(48px);
+      letter-spacing: -0.05em;
+      margin-top: rem(16px);
+      text-align: right;
+      padding-right: 0.05em;
+      margin-left: rem(16px);
+    }
+  }
+}

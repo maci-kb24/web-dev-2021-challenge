@@ -1,0 +1,23 @@
+{
+  "name": "sketch-web-dev-2021-challenge",
+  "version": "1.0.0",
+  "description": "Sketch – Web Developer challenge for 2021 hiring",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --style=compressed --color assets/scss/styles.scss static_assets/css/styles.css",
+    "server": "serve ./",
+    "start": "npm-run-all sass --parallel watch:* server",
+    "watch:sass": "npm run sass -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "serve": "^12.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.32.5"
+  }
+}
