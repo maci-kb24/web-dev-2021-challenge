@@ -1,0 +1,22 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "productId": 1,
+      "rating": 3,
+      "comment": "I liked it, but didn't love it."
+    },
+    {
+      "id": 2,
+      "productId": 1,
+      "rating": 5,
+      "comment": "Absolutely love the quality on this!"
+    },
+    {
+      "id": 3,
+      "productId": 6,
+      "rating": 1,
+      "comment": "Nope! Avoid it!"
+    }
+  ]
+}
