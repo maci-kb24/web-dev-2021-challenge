@@ -75,7 +75,7 @@
       left:0;
       display: flex;
       justify-content: center;
-      align-items: stretch;
+      align-items: center;
       background: $color-overlay;
       opacity: 0;
       &:active {
@@ -85,14 +85,18 @@
         opacity: 1;
       }
       #review-btn {
-        padding:12px 24px;
+        padding:32px 48px;
         color: $color-black;
         font-weight: $font-weight-bold;
-        font-size:18px;
+        font-size:24px;
         background-color: $color-white;
         border-radius: 33px;
         border: $color-border;
         cursor: pointer;
+        @media only screen and (min-width: $breakpoint-tablet) {
+            padding:16px 32px;
+            font-size:18px;
+          }
       }
     }
     #review-card {
@@ -167,6 +171,11 @@
           border-radius: 33px;
           border: $color-border;
           cursor: pointer;
+          @media only screen and (min-width: $breakpoint-tablet) {
+                margin: 73px auto 32px auto;
+                padding:12px 33px;
+                font-size:18px;
+            }
           &:disabled {
             color: lightgray;
             background-color: #eeeedd;
@@ -175,11 +184,11 @@
         }
       }
       .spinner {
-        display: inline-block;
+        // display: inline-block;
         font-size:24px;
-        // display: none;
+        display: none;
         position:absolute;
-        inset: 45% 45%;
+        inset: 45%;
         // animation: spinner .2s linear infinite;
       }
     }
@@ -237,21 +246,21 @@
 
 /*Media Queries*/
 
-@media only screen and (min-width: $breakpoint-tablet) {
-  .submit-btn {
-    margin: 73px auto 32px auto!important;
-    padding:12px 33px!important;
-    font-size:18px!important;
-  }
-}
-@media only screen and (min-width: $breakpoint-tablet) {
-  .review-btn {
-    padding:16px 32px!important;
-    font-size:24px!important;
-  }
-}
-@media only screen and (min-width: $breakpoint-tablet) {
-  .image-overlay {
-    align-items: center!important;
-  }
-}
+// @media only screen and (min-width: $breakpoint-tablet) {
+//   .submit-btn {
+//     margin: 73px auto 32px auto!important;
+//     padding:12px 33px!important;
+//     font-size:18px!important;
+//   }
+// }
+// @media only screen and (min-width: $breakpoint-tablet) {
+//   .review-btn {
+//     padding:16px 32px!important;
+//     font-size:24px!important;
+//   }
+// }
+// @media only screen and (min-width: $breakpoint-tablet) {
+//   .image-overlay {
+//     align-items: center!important;
+//   }
+// }
