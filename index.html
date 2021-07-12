@@ -28,7 +28,42 @@
       <div class="wrapper">
 
         <div class="product">
-          <div class="image"><img src="https://images.unsplash.com/photo-1565530557873-14ab8a68a85b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2250&q=80" alt=""></div>
+          <div class="image"><img src="https://images.unsplash.com/photo-1565530557873-14ab8a68a85b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2250&q=80" alt="">
+            <div class="image-overlay">
+              <button id="review-btn">Write a review</button>
+            </div>
+            <div id="review-card">
+            <form action="post" id="review-form">
+              <div class="star-ratings">
+                <input type="radio" name="star-one" >
+                <label for="star-one"><i class="far fa-star" id="stars" aria-hidden="true" ></i></label>
+                <input type="radio" name="star-two" >
+                <label for="star-two"><i class="far fa-star " class="stars" aria-hidden="true"></i></label>
+                <input type="radio" name="star-three" id="star-three">
+                <label for="star-three"><i class="far fa-star" class="stars" aria-hidden="true"></i></label>
+                <input type="radio" name="star-four" id="star-four">
+                <label for="star-four"><i class="far fa-star" class="stars" aria-hidden="true"></i></label>
+                <input type="radio" name="star-five" id="star-five">
+                <label for="star-five"><i class="far fa-star" class="stars" aria-hidden="true"></i></label>
+              </div>
+              <div class="review-content">
+                <div class="review-one">
+                  <label for="title">What's wrong with it?</label>
+                  <textarea class="comment-one" name="comment-one" rows="5" placeholder="I didn't like the fact that it was..."></textarea>
+                </div>
+                <div style="display: none;" class="review-two">
+                  <label for="title">Any highlight you would like to share?</label>
+                  <textarea  class="comment-two" name="comment-two" rows="5" placeholder="Let us know your thougths"></textarea>
+                </div>
+              </div>
+              <div>
+                <button id="submit-btn" type="submit">Submit</button>
+              </div>
+            </form>
+            <div class="spinner"><i class="fa fa-spinner fa-spin"></i></div>
+
+            </div>
+          </div>
           <div>
             <div>
               <h3>Black watch with brown bracelet</h3>
@@ -134,5 +169,6 @@
         </ul>
       </div>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>
