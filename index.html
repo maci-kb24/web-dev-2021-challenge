@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,23 +33,33 @@
               <button id="review-btn">Write a review</button>
             </div>
             <div id="review-card">
-            <form action="post" id="review-form">
+            <form method="POST" id="review-form">
               <div class="star-ratings">
-                <input type="radio" name="star-one" >
-                <label for="star-one"><i class="far fa-star" id="stars" aria-hidden="true" ></i></label>
-                <input type="radio" name="star-two" >
-                <label for="star-two"><i class="far fa-star " class="stars" aria-hidden="true"></i></label>
-                <input type="radio" name="star-three" id="star-three">
-                <label for="star-three"><i class="far fa-star" class="stars" aria-hidden="true"></i></label>
-                <input type="radio" name="star-four" id="star-four">
-                <label for="star-four"><i class="far fa-star" class="stars" aria-hidden="true"></i></label>
-                <input type="radio" name="star-five" id="star-five">
-                <label for="star-five"><i class="far fa-star" class="stars" aria-hidden="true"></i></label>
+                <input type="radio" name="star-five" id="star-five" value="5">
+                <label for="star-five">
+                  <i class="active fas fa-star star-outline" aria-hidden="true"></i>
+                </label>
+                <input type="radio" name="star-four" id="star-four" value="4">
+                <label for="star-four">
+                  <i class="active fas fa-star star-outline" aria-hidden="true"></i>
+                </label>
+                <input type="radio" name="star-three" id="star-three" value="3">
+                <label for="star-three">
+                  <i class="active fas fa-star star-outline" aria-hidden="true"></i>
+                </label>
+                <input type="radio" name="star-two" id="star-two" value="2">
+                <label for="star-two">
+                  <i class="active fas fa-star star-outline" aria-hidden="true"></i>
+                </label>
+                <input type="radio" name="star-one" id="star-one" value="1">
+                <label for="star-one" id="label">
+                  <i class="active fas fa-star star-outline" aria-hidden="true"></i>
+                </label>
               </div>
               <div class="review-content">
                 <div class="review-one">
                   <label for="title">What's wrong with it?</label>
-                  <textarea class="comment-one" name="comment-one" rows="5" placeholder="I didn't like the fact that it was..."></textarea>
+                  <textarea id="comment" class="comment-one" name="comment-one" rows="5" placeholder="I didn't like the fact that it was..."></textarea>
                 </div>
                 <div style="display: none;" class="review-two">
                   <label for="title">Any highlight you would like to share?</label>
@@ -60,7 +70,7 @@
                 <button id="submit-btn" type="submit">Submit</button>
               </div>
             </form>
-            <div class="spinner"><i class="fa fa-spinner fa-spin"></i></div>
+            <div class="spinner"><i class="fas fa-circle-notch fa-spin"></i></div>
 
             </div>
           </div>
