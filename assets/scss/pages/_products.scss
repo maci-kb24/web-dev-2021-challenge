@@ -117,9 +117,10 @@
           display: block;
           text-align: center;
           padding:20px;
-          input[type=radio] {
+          input[type=checkbox] {
             display: none;
             &:checked {
+              color: $color-white;
               ~ {
                 label  {
                   color: $color-white;
@@ -128,7 +129,7 @@
             }
           }
           label {
-            color: #bbb;
+            color: #3e3e3e;
             font-size: 32px;
             padding: 0px 8px 10px 0px;
             cursor: pointer;

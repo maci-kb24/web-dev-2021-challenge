@@ -5,10 +5,15 @@ const starFill = document.getElementsByClassName('star-fill');
 const label = document.getElementById('label');
 const submitBtn = document.getElementById('submit-btn');
 const form = document.getElementById('review-form');
-const comment = document.getElementById('comment');
-const input = document.querySelectorAll('input[type="radio"]');
+const textBox = document.getElementById('review-one');
+const textBoxTwo = document.getElementById('review-two');
+const inputs = document.querySelectorAll('input[type="checkbox"]');
+const inputOne = document.getElementById('star-one');
+const inputTwo = document.getElementById('star-two');
 
 
+
+//Write a review btn
 reviewBtn.addEventListener('click', clickBtn);
 
 function clickBtn() {
@@ -16,34 +21,53 @@ function clickBtn() {
     reviewCard.style.display = 'flex';
 }
 
-// label.addEventListener('click', checked);
+
+// inputs.addEventListener('click', checked);
 
 // function checked() {
-//     for( let i = 0; i < starOutline.length; i++) {
-//         starFill[i].style.display = 'inline-block';
+
+//     for( let i = inputs.length - 1; i >= 0; i--) {
+//       return inputs[i].value;
 //     }
-//     reviewCard.style.background = '#000000';
-//     document.getElementById('submit-btn').disabled = true;
+
+//     if( inputOne.value & inputTwo.value ) {
+//       textBox.style.display = 'block';
+//       textBoxTwo.style.display = 'none';
+//     }
+//     else {
+//       textBoxTwo.style.display = 'block';
+//     }
+//     // for( let i = 0; i < starOutline.length; i++) {
+//     //     starFill[i].style.display = 'inline-block';
+//     // }
+//     // reviewCard.style.background = '#000000';
+//     // document.getElementById('submit-btn').disabled = true;
 // }
 
 form.addEventListener('submit', submitForm);
 
-function submitForm(event) {
+async function submitForm(event) {
   event.preventDefault();
 
-  let inputValue = input.value;
-  let commentValue = comment.value;
+  // const comment = document.getElementById('comment');
+  // const inputs = document.querySelectorAll('input[type="checkbox"]');
 
-  fetch('http://localhost:3000/reviews', {
+  // for( let i = inputs.length - 1; i >= 0; i--) {
+  //   return inputs[i].value;
+  // }
+
+  await fetch('http://localhost:3000/reviews', {
     method: 'POST',
     body: JSON.stringify({
-    rating: '',
-    comment: ''
+    id: ' ',
+    productId: ' ',
+    rating: inputs.value,
+    comment: textBox.value
   }),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
   },
-})
+  })
   .then((response) => response.json())
   .then((data) => console.log(data));
 }
