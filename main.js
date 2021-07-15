@@ -5,22 +5,19 @@ const starFill = document.getElementsByClassName('star-fill');
 const label = document.getElementById('label');
 const submitBtn = document.getElementById('submit-btn');
 const form = document.getElementById('review-form');
-const textBox = document.getElementById('review-one');
-const textBoxTwo = document.getElementById('review-two');
-const inputs = document.querySelectorAll('input[type="checkbox"]');
+const reviewBox = document.getElementById('review-box');
+const inputs = document.querySelectorAll('input[type="checkbox"]').value;
 const inputOne = document.getElementById('star-one');
 const inputTwo = document.getElementById('star-two');
 
 
-
-//Write a review btn
 reviewBtn.addEventListener('click', clickBtn);
 
 function clickBtn() {
     reviewBtn.style.display = 'none';
     reviewCard.style.display = 'flex';
+    submitBtn.disabled = false;
 }
-
 
 // inputs.addEventListener('click', checked);
 
@@ -30,39 +27,36 @@ function clickBtn() {
 //       return inputs[i].value;
 //     }
 
-//     if( inputOne.value & inputTwo.value ) {
+//     if( inputs[0].value == true ) {
 //       textBox.style.display = 'block';
 //       textBoxTwo.style.display = 'none';
 //     }
-//     else {
+//     else if( inputs[1].value == true) {
 //       textBoxTwo.style.display = 'block';
+//       textBox.style.display = 'none';
 //     }
-//     // for( let i = 0; i < starOutline.length; i++) {
-//     //     starFill[i].style.display = 'inline-block';
-//     // }
-//     // reviewCard.style.background = '#000000';
-//     // document.getElementById('submit-btn').disabled = true;
 // }
 
 form.addEventListener('submit', submitForm);
 
 async function submitForm(event) {
+
   event.preventDefault();
 
-  // const comment = document.getElementById('comment');
-  // const inputs = document.querySelectorAll('input[type="checkbox"]');
+  const reviewBox = document.getElementById('review-box');
+  const inputs = document.querySelectorAll('input[type="checkbox"]');
 
-  // for( let i = inputs.length - 1; i >= 0; i--) {
-  //   return inputs[i].value;
-  // }
+  for( let i = inputs.length - 1; i >= 0; i--) {
+    return inputs[i].value;
+  }
 
   await fetch('http://localhost:3000/reviews', {
     method: 'POST',
     body: JSON.stringify({
     id: ' ',
     productId: ' ',
-    rating: inputs.value,
-    comment: textBox.value
+    rating: inputs[i].value,
+    comment: reviewBox.value
   }),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
@@ -70,4 +64,7 @@ async function submitForm(event) {
   })
   .then((response) => response.json())
   .then((data) => console.log(data));
+
+  submitBtn.disabled = true;
+
 }

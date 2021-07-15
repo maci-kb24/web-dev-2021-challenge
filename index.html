@@ -57,21 +57,23 @@
                 </label>
               </div>
               <div class="review-content">
-                <div class="review-one">
+                <div id="review-one">
                   <label for="title">What's wrong with it?</label>
-                  <textarea id="review-one" class="comment-one" name="comment-one" rows="5" placeholder="I didn't like the fact that it was..."></textarea>
+                  <textarea id="review-box" class="comment-one" name="comment-one" rows="5" placeholder="I didn't like the fact that it was..."></textarea>
                 </div>
-                <div style="display: none;" class="review-two">
+                <div id="review-two">
                   <label for="title">Any highlight you would like to share?</label>
-                  <textarea  id="review-two" class="comment-two" name="comment-two" rows="5" placeholder="Let us know your thougths"></textarea>
+                  <textarea  id="review-box" class="comment-two" name="comment-two" rows="5" placeholder="Let us know your thougths"></textarea>
                 </div>
               </div>
               <div>
-                <button id="submit-btn" type="submit">Submit</button>
+                <button id="submit-btn" type="submit" disabled>Submit</button>
+                <div class="spinner"><i class="fas fa-circle-notch fa-spin"></i></div>
+                <div class="check"><i class="fas fa-check"></i></div>
+                <div class="uncheck"><i class="fas fa-times"></i></div>
               </div>
             </form>
-            <div class="spinner"><i class="fas fa-circle-notch fa-spin"></i></div>
-
+            
             </div>
           </div>
           <div>

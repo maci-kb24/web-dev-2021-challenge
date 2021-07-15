@@ -155,11 +155,14 @@
               outline:none;
             }
           }
-          .comment-two {
-            border:none;
-            resize: none;
-            &:focus-visible {
-              outline:none;
+          #review-two {
+            display: none;
+            .comment-two {
+              border:none;
+              resize: none;
+              &:focus-visible {
+                outline:none;
+              }
             }
           }
         }
@@ -185,12 +188,12 @@
           }
         }
       }
-      .spinner {
+      .spinner, .check, .uncheck {
         // display: inline-block;
         font-size:24px;
         display: none;
         position:absolute;
-        inset: 45%;
+        inset: 82% 47%;
         // animation: spinner .2s linear infinite;
       }
     }
@@ -205,7 +208,6 @@
     object-fit: cover;
     aspect-ratio: 1;
   }
-
   div {
     display: flex;
     justify-content: space-between;
@@ -231,7 +233,6 @@
       color: $color-black;
       font-size: rem(14px);
     }
-
     .price {
       font-weight: $font-weight-bold;
       color: $color-black;
