@@ -17,6 +17,18 @@
       "productId": 6,
       "rating": 1,
       "comment": "Nope! Avoid it!"
+    },
+    {
+      "id": 36,
+      "productId": 83,
+      "rating": "4",
+      "comment": "dsdsd"
+    },
+    {
+      "id": 13,
+      "productId": 95,
+      "rating": "4",
+      "comment": "dsd"
     }
   ]
 }

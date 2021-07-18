@@ -78,25 +78,25 @@
       align-items: center;
       background: $color-overlay;
       opacity: 0;
-      &:active {
-        opacity: 1!important;
+      @media(hover: hover) {
+        &:hover {
+          opacity: 1;
+        }
       }
-      &:hover {
-        opacity: 1;
+      @media(hover: none) {
+        &:active {
+          opacity: 1;
+        }
       }
       #review-btn {
-        padding:32px 48px;
+        padding:16px 32px;
         color: $color-black;
         font-weight: $font-weight-bold;
-        font-size:24px;
+        font: size 18px;
         background-color: $color-white;
         border-radius: 33px;
         border: $color-border;
         cursor: pointer;
-        @media only screen and (min-width: $breakpoint-tablet) {
-            padding:16px 32px;
-            font-size:18px;
-          }
       }
     }
     #review-card {
@@ -116,11 +116,9 @@
           direction: rtl;
           display: block;
           text-align: center;
-          padding:20px;
           input[type=checkbox] {
             display: none;
             &:checked {
-              color: $color-white;
               ~ {
                 label  {
                   color: $color-white;
@@ -134,20 +132,24 @@
             padding: 0px 8px 10px 0px;
             cursor: pointer;
             transition: all .3s ease-in-out;
-            &:hover {
-              color: $color-white;
-              ~ {
-                label {
-                  color: $color-white;
+            @media(hover: hover) {
+              &:hover {
+                color: $color-white;
+                ~ {
+                  label {
+                    color: $color-white;
+                  }
                 }
               }
             }
           }
         }
         .review-content {
+          display:none;
           border-radius:8px;
           background-color: $color-white;
           padding:10px;
+          margin-top:15px;
           .comment-one {
             border:none;
             resize: none;
@@ -155,36 +157,20 @@
               outline:none;
             }
           }
-          #review-two {
-            display: none;
-            .comment-two {
-              border:none;
-              resize: none;
-              &:focus-visible {
-                outline:none;
-              }
-            }
-          }
         }
         #submit-btn {
-          margin: 73px 0 32px 0;
-          padding:24px 66px;
+          margin: 63px auto 32px auto;
+          padding:12px 33px;
           color: $color-black;
           font-weight: $font-weight-bold;
-          font-size:24px;
+          font-size:18px;
           background-color: $color-white;
           border-radius: 33px;
           border: $color-border;
           cursor: pointer;
-          @media only screen and (min-width: $breakpoint-tablet) {
-                margin: 73px auto 32px auto;
-                padding:12px 33px;
-                font-size:18px;
-            }
           &:disabled {
             color: lightgray;
             background-color: #eeeedd;
-            // border-color: (rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
           }
         }
       }

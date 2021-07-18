@@ -35,39 +35,40 @@
             <div id="review-card">
             <form method="POST" id="review-form">
               <div class="star-ratings">
-                <input type="checkbox" name="star-five" id="star-five" value="5">
+                <input type="checkbox" name="star-five" id="star-five" onclick="onClickHandler(this)"  value="5">
                 <label for="star-five">
                   <i class="active fas fa-star star-outline" aria-hidden="true"></i>
                 </label>
-                <input type="checkbox" name="star-four" id="star-four" value="4">
+                <input type="checkbox" name="star-four" id="star-four" onclick="onClickHandler(this)"  value="4">
                 <label for="star-four">
                   <i class="active fas fa-star star-outline" aria-hidden="true"></i>
                 </label>
-                <input type="checkbox" name="star-three" id="star-three" value="3">
+                <input type="checkbox" name="star-three" id="star-three" onclick="onClickHandler(this)"  value="3">
                 <label for="star-three">
                   <i class="active fas fa-star star-outline" aria-hidden="true"></i>
                 </label>
-                <input type="checkbox" name="star-two" id="star-two" value="2">
+                <input type="checkbox" name="star-two" id="star-two" onclick="onClickHandler(this)"  value="2">
                 <label for="star-two">
                   <i class="active fas fa-star star-outline" aria-hidden="true"></i>
                 </label>
-                <input type="checkbox" name="star-one" id="star-one" value="1">
+                <input type="checkbox" name="star-one" id="star-one" onclick="onClickHandler(this)"  value="1">
                 <label for="star-one" id="label">
                   <i class="active fas fa-star star-outline" aria-hidden="true"></i>
                 </label>
               </div>
-              <div class="review-content">
+              <div class="review-content" id="review-content">
                 <div id="review-one">
-                  <label for="title">What's wrong with it?</label>
+                  <label id="review-label" for="title">What's wrong with it?</label>
                   <textarea id="review-box" class="comment-one" name="comment-one" rows="5" placeholder="I didn't like the fact that it was..."></textarea>
                 </div>
-                <div id="review-two">
-                  <label for="title">Any highlight you would like to share?</label>
-                  <textarea  id="review-box" class="comment-two" name="comment-two" rows="5" placeholder="Let us know your thougths"></textarea>
-                </div>
               </div>
-              <div>
-                <button id="submit-btn" type="submit" disabled>Submit</button>
+              <div style="position: relative;">
+                <button id="submit-btn" type="submit" disabled>
+                  <span id="submit">Submit</span>
+                  <i id="spinner" class="fas fa-circle-notch fa-spin"></i>
+                  <i id="check" class="fas fa-check"></i>
+                  <i id="uncheck" class="fas fa-times"></i>
+                </button>
                 <div class="spinner"><i class="fas fa-circle-notch fa-spin"></i></div>
                 <div class="check"><i class="fas fa-check"></i></div>
                 <div class="uncheck"><i class="fas fa-times"></i></div>
