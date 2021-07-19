@@ -1,3 +1,6 @@
+// getting the variables
+
+const starRating = document.querySelector('star-ratings');
 const reviewBtn = document.getElementById('review-btn');
 const submitBtn = document.getElementById('submit-btn');
 
@@ -10,43 +13,32 @@ const review1 = document.getElementById("review-one");
 const reviewContent = document.getElementById("review-content");
 
 const inputs = document.querySelectorAll('input[type="checkbox"]').value;
-// const inputOne = document.getElementById('star-one');
-// const inputTwo = document.getElementById('star-two');
 
 const spinner = document.getElementById("spinner");
 const check = document.getElementById("check");
 const uncheck = document.getElementById("uncheck");
 
+let ratings;
+
+//Add event listener to write a review button
 
 reviewBtn.addEventListener('click', clickBtn);
-
-const submit = document.getElementById("submit");
 
 function clickBtn() {
     reviewBtn.style.display = 'none';
     reviewCard.style.display = 'flex';
     submitBtn.disabled = false;
     
-    submit.style.display = "block";
     spinner.style.display = "none";
     check.style.display = "none";
     uncheck.style.display = "none";
-
 }
 
-form.addEventListener('submit', submitForm);
-
-
-let ratings;
 function onClickHandler(cb) {
  // console.log("Clicked, new value = " + cb.value);
-   ratings = cb.value;
+  ratings = cb.value;
 
-  spinner.style.display = "none";
   submitBtn.disabled = false;
-  submit.style.display = "block";
-
-  //submitBtn.innerHTML ="Submit"
   reviewContent.style.display = "flex";
 
   if(ratings >= 3){
@@ -64,28 +56,27 @@ function onClickHandler(cb) {
   }
 }
 
+form.addEventListener('submit', submitForm);
+
 async function submitForm(event) {
 
   event.preventDefault();
-
-  submit.style.display = "none";
   
   spinner.style.display = "block";
 
-
   var formData = new FormData(form);
   // Below code is to get all values in the form.
-  // var obj = {};
-	// for (var key of formData.keys()) {
-	// 	obj[key] = formData.get(key);
+  var obj = {};
+	for (var key of formData.keys()) {
+		obj[key] = formData.get(key);
     
-	// }
+	}
 
   const comment = formData.get("comment-one");
 
   const Data =  {
-    "id": Math.floor((Math.random() * 100) + 1), //random number between 1 to 100
-    "productId": Math.floor((Math.random() * 100) + 1),
+    // "id": Math.floor((Math.random() * 10) + 1),
+    "productId": Math.floor((Math.random() * 10) + 1), // random number between 1 to 10
     "rating": ratings,
     "comment": comment
   }

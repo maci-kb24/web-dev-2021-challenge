@@ -171,16 +171,25 @@
           &:disabled {
             color: lightgray;
             background-color: #eeeedd;
+            padding:12px 33px;
           }
         }
       }
-      .spinner, .check, .uncheck {
-        // display: inline-block;
+      .spinner {
         font-size:24px;
-        display: none;
         position:absolute;
-        inset: 82% 47%;
-        // animation: spinner .2s linear infinite;
+        top: 52%;
+        left:47%;
+      }
+      .check {
+        font-size: 24px;
+        position: absolute;
+        inset: 52% 47%;
+      }
+      .uncheck {
+        font-size:24px;
+        position:absolute;
+        inset: 52% 47%;
       }
     }
   }

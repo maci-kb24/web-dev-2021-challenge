@@ -19,16 +19,10 @@
       "comment": "Nope! Avoid it!"
     },
     {
-      "id": 36,
-      "productId": 83,
-      "rating": "4",
-      "comment": "dsdsd"
-    },
-    {
-      "id": 13,
-      "productId": 95,
-      "rating": "4",
-      "comment": "dsd"
+      "productId": 1,
+      "rating": "3",
+      "comment": "<div>hello how are you</div>",
+      "id": 4
     }
   ]
 }
