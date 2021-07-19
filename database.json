@@ -17,12 +17,6 @@
       "productId": 6,
       "rating": 1,
       "comment": "Nope! Avoid it!"
-    },
-    {
-      "productId": 1,
-      "rating": "3",
-      "comment": "<div>hello how are you</div>",
-      "id": 4
     }
   ]
 }

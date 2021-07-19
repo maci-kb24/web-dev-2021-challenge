@@ -1,5 +1,4 @@
 // getting the variables
-
 const starRating = document.querySelector('star-ratings');
 const reviewBtn = document.getElementById('review-btn');
 const submitBtn = document.getElementById('submit-btn');
@@ -27,9 +26,9 @@ reviewBtn.addEventListener('click', clickBtn);
 function clickBtn() {
     reviewBtn.style.display = 'none';
     reviewCard.style.display = 'flex';
-    submitBtn.disabled = false;
+    submitBtn.disabled = true;
     
-    spinner.style.display = "none";
+    spinner.style.display = "block";
     check.style.display = "none";
     uncheck.style.display = "none";
 }
@@ -38,12 +37,12 @@ function onClickHandler(cb) {
  // console.log("Clicked, new value = " + cb.value);
   ratings = cb.value;
 
-  submitBtn.disabled = false;
+  // submitBtn.disabled = true;
+  // spinner.style.display = "block";
   reviewContent.style.display = "flex";
 
   if(ratings >= 3){
     review1.style.display = "flex";
-
     label.innerHTML = "Any highlight you would like to share?";
     reviewBox.placeholder = "Let us know your thougths";
     
@@ -52,9 +51,17 @@ function onClickHandler(cb) {
     review1.style.display = "flex";
     label.innerHTML = "What's wrong with it?";
     reviewBox.placeholder = "I didn't like the fact that it was...";
+  }
 
+  reviewBox.addEventListener('keypress', logKey);
+
+  function logKey() {
+    submitBtn.disabled = false;
+    spinner.style.display = "none"
   }
 }
+
+//Submit form
 
 form.addEventListener('submit', submitForm);
 
@@ -62,8 +69,6 @@ async function submitForm(event) {
 
   event.preventDefault();
   
-  spinner.style.display = "block";
-
   var formData = new FormData(form);
   // Below code is to get all values in the form.
   var obj = {};
@@ -75,8 +80,8 @@ async function submitForm(event) {
   const comment = formData.get("comment-one");
 
   const Data =  {
-    // "id": Math.floor((Math.random() * 10) + 1),
-    "productId": Math.floor((Math.random() * 10) + 1), // random number between 1 to 10
+    "id": Math.floor((Math.random() * 100) + 1), // random number between 1 to 100
+    "productId": Math.floor((Math.random() * 100) + 1), 
     "rating": ratings,
     "comment": comment
   }
@@ -90,9 +95,9 @@ async function submitForm(event) {
   })
   .then(response => response.json())
   .then(data => {
-    console.log(data);
+    data;
+    submitBtn.disabled = true;
     check.style.display = "block";
-    spinner.style.display = "none";
     reviewCard.style.background = "transparent";
 
   })
@@ -102,6 +107,5 @@ async function submitForm(event) {
 
 });
   
-  submitBtn.disabled = true;
 
 }
